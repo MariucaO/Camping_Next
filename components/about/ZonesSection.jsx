@@ -19,12 +19,12 @@ const mapZoneKeys = {
 const zonesData = [
   {
     id: "camping_rulote",
-    title: "Poiana Călătoare (Rulote)",
+    title: "Poiana Călătoare (VanLife)",
     color: "var(--accent)", 
     capacity: "4 Echipaje",
     tag: "Van Life",
     details:
-      "Situată imediat la intrare, această zonă este destinată exclusiv rulotelor și autorulotelor. Oferă acces la curent electric, deversare apă și apă curentă. Este o zonă însorită, recomandăm utilizarea umbrarelor.",
+      "Situată imediat la intrare, această zonă este destinată exclusiv rulotelor, autorulotelor sau turiștilor care vor să doarmă în mașina personală/ cort pe mașină. Oaspeții au acces la curent electric, deversare apă, apă curentă, dar și la restul facilităților pe care le are campingul. Este o zonă însorită, recomandăm utilizarea umbrarelor.",
   },
   {
     id: "camping_1_3",
@@ -33,34 +33,34 @@ const zonesData = [
     capacity: "6 Pitch-uri delimitate",
     tag: "Confort & Acces",
     details:
-      "Situată în continuarea Șurii Vechi, oferă locuri de cort pentru 1-3 persoane. Zona este semiumbroasă datorită unui cireș păsăresc mare și a liniei de pruni plantați strategic.",
+      "Situată în continuarea Șurii Vechi, aici avem locuri generoase de cort pentru 1-3 persoane. Zona este semiumbroasă datorită unui cireș păsăresc mare, a liniei de pruni de pe linia gardului și a tinerilor arbori plantați anul trecut. Pitch-urile sunt delimitate cu frânghie și plante cățărătoare(glicină, trompeta turcului, viță de cacao).",
   },
   {
     id: "camping_random",
-    title: "Livada Liberă",
+    title: "Livada Liberă (Camping Random)",
     color: "var(--accent)",
     capacity: "+20 de corturi",
     tag: "Camp Life",
     details:
-      "Zona vastă din spatele campingului, fără spații delimitate. Oaspeții își pot alege locul oriunde, bucurându-se de umbra deasă a nucului bătrân și a pomilor fructiferi.",
+      "Zona vastă din spatele campingului, fără spații delimitate. Oaspeții își pot alege locul oriunde, bucurându-se de umbra deasă a nucului bătrân și a pomilor fructiferi. Spațiul este foarte generos și este ideal pentru grupuri foarte mari, de 10-20 de corturi.",
   },
   {
     id: "camping_1_4",
-    title: "Zona 'Mesteceni'",
+    title: "Zona 'Meri-Mesteceni'",
     color: "var(--foreground)",
-    capacity: "7 Pitch-uri mari",
+    capacity: "9 Pitch-uri mari",
     tag: "Grupuri & Relaxare",
     details:
-      "Spații mari delimitate de mesteceni tineri. Poate acomoda corturi de 4-6 persoane și este situată aproape de a doua bucătărie de vară și de Baia sub Cer.",
+      "Aici se află pitch-uri mari, delimitate de mesteceni tineri și plante cățărătoare. Zona se află în spatele livezii-camping, la capătul drumului de acces, între grupul sanitar ”Baia sub Cer” și Bucătăria-Foișor. Cele 9 spații de campare sunt foarte mari, ideale pentru corturi de 2-4 persoane.",
   },
   {
     id: "la-nuc", 
-    title: "La Nuc",
+    title: "La Nuc (Camping Random)",
     color: "var(--accent)", 
     capacity: "8-10 corturi mari",
     tag: "Umbră Deasă",
     details:
-      "Situată în dreapta drumului de acces, zona este umbroasă după-amiaza. Nucul bătrân, dudul și arțarul oferă răcoare din belșug, fiind ideală pentru corturi de familie.",
+      "Situată în dreapta drumului de acces, zona este umbroasă după-amiaza. Nucul imens plantat de bunica Ica,  dudul și arțarul  oferă răcoare din belșug. Deși este mai mică decât Livada Liberă, zona are o capacitate de 8-10 corturi mari, de 4-6 persoane.",
   },
 ];
 

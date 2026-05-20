@@ -10,16 +10,17 @@ import {
 
 const kitchenFeatures = [
   { item: "Bucătărie acoperită", desc: "Spațiu complet protejat pentru gătit cu blat de lucru generos" },
-  { item: "Utilități Directe", desc: "1 chiuvetă funcțională și spații dedicate pentru depozitare" },
+    { item: "Foișor acoperit", desc: "Zonă de luat masa/relaxare acoperită, dotată cu 2 mese mari și bănci/scaune" },
+  { item: "Apă curentă", desc: "1 chiuvetă  și spații dedicate pentru depozitare" },
   { item: "2 Frigidere", desc: "Suficient spațiu pentru organizarea alimentelor tuturor oaspeților" },
-  { item: "Ustensile complete", desc: "Tot ce ai nevoie pentru pregătirea și servirea mesei în natură" },
+  { item: "Ustensile de gătit", desc: "Tot ce ai nevoie pentru pregătirea și servirea mesei în natură" },
 ];
 
 const technicalFeatures = [
   { emoji: "⚡", label: "Curent Electric" },
-  { emoji: "🔌", label: "Prize Încărcare" },
+  { emoji: "🔌", label: "Prize încărcare" },
   { emoji: "🛠️", label: "În Lucru" },
-  { emoji: "🌿", label: "Zonă Livadă" },
+  { emoji: "🌿", label: "Zonă livadă" },
 ];
 
 export default function SummerKitchenPage() {
@@ -44,7 +45,7 @@ export default function SummerKitchenPage() {
               </motion.h2>
               <motion.div variants={fadeInUp} className="w-20 h-1 bg-[var(--accent)] mx-auto rounded-full opacity-60" />
               <motion.p variants={fadeInUp} className="text-[var(--foreground)]/80 max-w-2xl mx-auto italic text-lg leading-relaxed font-sans font-medium pt-4">
-                "Pentru weekendurile mai aglomerate, ne-am apucat să mai construim o a doua bucătărie de vară și un alt loc de luat masa. Noua construcție este amplasată între <strong>Livada Liberă</strong> și <strong>Livada Liberă</strong>"
+                "Pentru weekendurile mai aglomerate, ne-am dorit să construim o a doua bucătărie de vară și un alt loc de luat masa. Noua construcție este amplasată între <strong>Livada Liberă</strong> și <strong>Meri&Mesteceni</strong>"
               </motion.p>
             </div>
 
@@ -52,7 +53,7 @@ export default function SummerKitchenPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Card 1: Dotări */}
               <motion.div variants={fadeInUp} className="bg-white p-10 rounded-[2rem] border border-[var(--foreground)]/10 shadow-sm">
-                <h3 className="text-3xl font-[family-name:var(--font-serif)] text-[var(--foreground)] mb-8">Planificare & Dotări</h3>
+                <h3 className="text-3xl font-[family-name:var(--font-serif)] text-[var(--foreground)] mb-8">Dotări</h3>
                 <ul className="space-y-6">
                   {kitchenFeatures.map((feat, i) => (
                     <li key={i} className="flex items-start gap-4 border-b border-[var(--foreground)]/5 pb-4 last:border-0">
@@ -71,7 +72,7 @@ export default function SummerKitchenPage() {
                 <div className="bg-[var(--foreground)]/5 p-10 rounded-[2rem] border border-[var(--accent)]/20 h-full">
                   <h3 className="text-3xl font-[family-name:var(--font-serif)] text-[var(--foreground)] mb-6">Spațiul Utilitar</h3>
                   <p className="text-sm text-[var(--foreground)]/80 leading-relaxed mb-8">
-                    Această a doua zonă este construită pentru a oferi un plus de autonomie. Rețelele de utilități sunt mapate inteligent pentru a deservi zona de camping din spatele livezii.
+                   Această bucătărie-foișor, cu loc generos de luat masa, acoperit, este construită în central în gradina- camping din spate. Pentru a observa corect unde este situată, vă invităm să vizitați harta interactivă de mai jos.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     {technicalFeatures.map((item, i) => (
@@ -88,7 +89,7 @@ export default function SummerKitchenPage() {
             {/* Buton Înapoi */}
             <div className="flex justify-center pt-8">
               <Link href="/#rezervare" className="group inline-flex items-center gap-3 bg-transparent text-[var(--foreground)] border-2 border-[var(--foreground)]/20 px-10 py-4 rounded-full text-[11px] font-bold hover:border-[var(--foreground)] transition-all uppercase tracking-[2px]">
-                ← Înapoi la Hartă
+                ← Spre hartă
               </Link>
             </div>
           </motion.div>
