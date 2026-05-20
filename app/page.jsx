@@ -1,0 +1,48 @@
+import Hero from "@/components/Hero";
+import AboutContent from "@/components/about/AboutContent";
+import BarnKitchen from "@/components/about/BarnKitchen";
+import OutdoorBathroom from "@/components/about/OutdoorBathroom";
+import ZonesSection from "@/components/about/ZonesSection";
+import LotruSection from "@/components/activities/LotruSection";
+import BookingMap from "@/components/about/BookingMap";
+import AboutGallery from "@/components/about/AboutGallery"; 
+import SummerKitchen from "@/components/about/SummerKitchen";
+
+export default function Home() {
+  return (
+    <main className="flex flex-col w-full">
+      {/* 1. Welcome & Visuals */}
+      <Hero />
+
+      {/* 2. Povestea umană */}
+      <section id="poveste">
+        <AboutContent />
+      </section>
+
+      <div id="facilitati" className="scroll-mt-20">
+        <BarnKitchen />
+        <OutdoorBathroom />
+        <SummerKitchen/>
+      </div>
+
+      {/* 5. Descrierea zonelor de campare */}
+      <section id="zone">
+        <ZonesSection />
+      </section>
+
+      {/* 6. Harta Interactivă & Booking */}
+      <section id="rezervare">
+        <BookingMap />
+      </section>
+
+      {/* 7. Activități în jur (Valea Lotrului) */}
+      <section id="activitati">
+        <LotruSection />
+      </section>
+
+      {/* 8. GALERIA - AICI lipsea! */}
+      <AboutGallery />
+
+    </main>
+  );
+}
