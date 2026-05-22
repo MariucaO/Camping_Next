@@ -46,7 +46,7 @@ export default function Navbar() {
 
         {/* Buton Rezervă */}
         <Link
-          href="#harta-booking"
+          href="/booking"
           className="bg-white text-black px-7 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-[var(--accent)] hover:text-white transition-all"
         >
           Rezervă
