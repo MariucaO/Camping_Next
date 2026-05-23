@@ -1,67 +1,26 @@
-"use client";
-import { useState, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
-import { zones } from "@/app/data/zones";
-
-function BookingForm() {
-  const searchParams = useSearchParams();
-  const zoneId = searchParams.get("zone");
-
-  const [formData, setFormData] = useState({
-    nume: "",
-    email: "",
-    perioada: "",
-    zona: zoneId || "",
-    copii: [],
-  });
-
-  const adaugaCopil = () => {
-    setFormData({...formData, copii: [...formData.copii, ""]});
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Rezervare trimisă:", formData);
-    alert("Rezervare recepționată!");
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-lg mx-auto p-6">
-      <h2 className="text-2xl font-bold">Rezervare</h2>
-      
-      <input required placeholder="Nume" className="w-full p-3 border rounded" onChange={(e) => setFormData({...formData, nume: e.target.value})} />
-      <input type="email" required placeholder="Email valid" className="w-full p-3 border rounded" onChange={(e) => setFormData({...formData, email: e.target.value})} />
-      <input type="date" required className="w-full p-3 border rounded" onChange={(e) => setFormData({...formData, perioada: e.target.value})} />
-
-      <select 
-        value={formData.zona}
-        required 
-        className="w-full p-3 border rounded" 
-        onChange={(e) => setFormData({...formData, zona: e.target.value})}
-      >
-        <option value="">Alege zona...</option>
-        {Object.values(zones)
-          .filter(z => z.isCampable)
-          .map(z => <option key={z.id} value={z.id}>{z.name} ({z.priceInfo})</option>)}
-      </select>
-
-      <button type="button" onClick={adaugaCopil} className="text-sm text-teal-700 underline">
-        + Adaugă copil sub 6 ani
-      </button>
-
-      {formData.copii.map((_, i) => (
-        <input key={i} placeholder={`Vârstă copil ${i+1}`} type="number" className="w-full p-2 border rounded" />
-      ))}
-
-      <button className="w-full bg-teal-900 text-white p-4 rounded font-bold">Trimite</button>
-    </form>
-  );
-}
+import React from 'react';
 
 export default function BookingPage() {
   return (
-    <Suspense fallback={<div>Se încarcă formularul...</div>}>
-      <BookingForm />
-    </Suspense>
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto">
+        <div className="bg-white shadow rounded-lg p-6">
+          <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Rezervare Camping
+          </h1>
+          
+          {/* Formular Tally integrat */}
+          <iframe 
+            src="https://tally.so/r/LZ6X6G?transparentBackground=1" 
+            width="100%" 
+            height="800" 
+            frameBorder="0" 
+            marginHeight="0" 
+            marginWidth="0" 
+            title="Rezervare Camping">
+          </iframe>
+        </div>
+      </div>
+    </div>
   );
 }
