@@ -82,7 +82,7 @@ export default function BookingMap() {
                       onClick={() => document.getElementById(selected)?.scrollIntoView({ behavior: "smooth", block: "start" })}
                       className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--accent)] hover:text-emerald-900 transition-all border-b-2 border-[var(--accent)]"
                     >
-                      Vezi detalii complete și galerie ↗
+                      Citește mai mult ↗
                     </button>
                   )}
                 </motion.div>
