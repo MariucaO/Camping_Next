@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import BackToTop from "@/components/BackToTop";
 
 // 1. Definitie Fonturi
 const cormorant = Cormorant_Garamond({
@@ -27,9 +28,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ro">
-      <body className="relative min-h-screen"> 
+      <body className="relative min-h-screen">
         <Navbar />
         <main>{children}</main>
+        <BackToTop />
         <WhatsAppButton />
         <Footer />
       </body>
