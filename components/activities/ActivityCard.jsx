@@ -1,49 +1,42 @@
 "use client";
 
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { FiPhone, FiFacebook, FiGlobe, FiMapPin } from "react-icons/fi";
 
-export default function ActivityCard({ title, image, description, content }) {
-  const [expanded, setExpanded] = useState(false);
-
+export default function ActivityCard({ item, onOpenGallery }) {
   return (
-    <motion.div
-      onClick={() => setExpanded(!expanded)} // ✅ Toggle on entire card
-      className="cursor-pointer bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-      whileHover={{ scale: 1.02 }}
-      layout
-    >
-      {/* Image */}
-      <div className="relative w-full aspect-[4/3]">
-        <Image src={image} alt={title} fill className="object-cover" />
+    <div className="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col h-full hover:shadow-md transition-shadow">
+      {/* Imaginea - acum legată de lightbox */}
+      {item.gallery && item.gallery.length > 0 && (
+        <img 
+          src={item.gallery[0]} 
+          alt={item.title} 
+          className="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer hover:opacity-90 transition-opacity" 
+          onClick={onOpenGallery} 
+        />
+      )}
+      
+      <h4 className="font-bold text-lg mb-2 text-teal-900">{item.title}</h4>
+      <p className="text-stone-600 text-sm mb-4 font-medium">{item.description}</p>
+      <p className="text-stone-500 text-xs mb-6 leading-relaxed flex-grow">{item.content}</p>
+      
+      {/* Butoane acțiune - Link-uri și Telefon */}
+      <div className="flex gap-3 mt-auto pt-4 border-t border-stone-50">
+        {item.links?.phone && (
+          <a href={`tel:${item.links.phone}`} className="text-xs flex items-center gap-1.5 text-emerald-700 hover:text-amber-600 font-bold transition-colors">
+            <FiPhone /> Sunați
+          </a>
+        )}
+        {item.links?.fb && (
+          <a href={item.links.fb} target="_blank" rel="noopener noreferrer" className="text-xs flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-bold transition-colors">
+            <FiFacebook /> Facebook
+          </a>
+        )}
+        {item.links?.web && (
+          <a href={item.links.web} target="_blank" rel="noopener noreferrer" className="text-xs flex items-center gap-1.5 text-teal-600 hover:text-teal-800 font-bold transition-colors">
+            <FiGlobe /> Web
+          </a>
+        )}
       </div>
-
-      {/* Text */}
-      <div className="p-4">
-        <div className="flex justify-between items-center">
-          <h3 className="text-xl font-serif text-amber-600">{title}</h3>
-          <span className="text-xl text-amber-500">{expanded ? "▲" : "▼"}</span>
-        </div>
-
-        <p className="text-gray-700 text-sm mt-2">{description}</p>
-
-        {/* Expanded content */}
-        <AnimatePresence initial={false}>
-          {expanded && (
-            <motion.p
-              className="text-gray-700 text-sm mt-3"
-              key="content"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {content}
-            </motion.p>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.div>
+    </div>
   );
 }
