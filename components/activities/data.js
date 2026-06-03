@@ -94,18 +94,18 @@ export const activitiesData = {
       },
       {
         title: "Băi Termale",
-        description: "Călimănești-Căciulata",
+        description: "Bogăția pământului, apele termale de la Călimănești-Căciulata sunt aproape de noi. La numai 15 km de Brezoi, se află vestita stațiune balneo-climaterică de pe Valea Oltului. Aici puteți opta pentru un număr mare de locații unde puteți înota și beneficia de alte proceduri conexe băilor termale.",
         content:
-          "Relaxare în ape termale și proceduri balneare la 15 km distanță.",
+          "",
         gallery: ["/thermals.jpg"],
         links: {},
       },
       {
         title: "Mănăstirile vâlcene",
-        description: "",
+        description: "Poți face un tur cultural pe la unele dintre cele mai frumoase mănăstiri din zonă. Suficient de aproape de Brezoi încât să poată fi vizitate într-o singură zi: Cozia, Berislăvești, Turnu, Stânișoara, Cornet, aceste mănăstiri, unele foarte vechi, oferă prilejul de a admira arhitectura religioasă specifică evului mediu românesc, picturile deosbeite, dar și mediul natural foarte frumos în care au fost construite.",
         content:
           "",
-        gallery: ["/"],
+        gallery: ["/manastiri.jpg"],
         links: {},
       },
     ],
