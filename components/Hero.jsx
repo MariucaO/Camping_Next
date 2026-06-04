@@ -22,7 +22,7 @@ export default function Hero() {
           Brezoi • Valea Lotrului
         </span>
 
-        <h1 className="text-5xl sm:text-8xl font-[family-name:var(--font-serif)] text-white leading-[1.1] tracking-tight">
+        <h1 className="text-5xl sm:text-6xl font-[family-name:var(--font-serif)] text-white leading-[1.1] tracking-tight">
           Camping <br className="hidden sm:block" /> Grădina cu Flori
         </h1>
 

@@ -46,8 +46,8 @@ export default function BarnHub() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-[family-name:var(--font-serif)] text-[var(--foreground)]"
             >
-              Șura Veche:{" "}
-              <span className="text-[var(--accent)]">Inima Campingului</span>
+              Grăjdiuțul vechi:{" "}
+              <span className="text-[var(--accent)]">Inima campingului</span>
             </motion.h2>
 
             <motion.div

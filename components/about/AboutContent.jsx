@@ -18,7 +18,7 @@ export default function AboutContent() {
         {/* Titlu și Intro - Varianta finuță aprobată */}
         <div className="text-center mb-20 px-6">
           <motion.h2 initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl md:text-4xl font-serif text-teal-900 mb-6">
-            Povestea Noastră
+            Povestea noastră
           </motion.h2>
           <div className="w-12 h-[2px] bg-amber-500/50 mx-auto mb-10" />
           <div className="max-w-3xl mx-auto">
