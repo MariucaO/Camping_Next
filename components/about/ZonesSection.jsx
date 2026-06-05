@@ -11,6 +11,7 @@ const zonesData = [
   {
     id: "rulote",
     title: "Poiana Călătoare (VanLife)",
+    image: "/camper-zone2.jpg", 
     capacity: "4 Echipaje",
     tag: "Van Life",
     details:
@@ -19,6 +20,7 @@ const zonesData = [
   {
     id: "cires",
     title: "Zona 'La Cireș'",
+    image: "/la_cires2.jpg", 
     capacity: "6 Pitch-uri",
     tag: "Confort & Acces",
     details:
@@ -27,6 +29,7 @@ const zonesData = [
   {
     id: "gradina",
     title: "Livada Liberă (Camping Random)",
+    image: "/gradina-libera1.jpg", 
     capacity: "+20 de corturi",
     tag: "Camp Life",
     details:
@@ -35,6 +38,7 @@ const zonesData = [
   {
     id: "meri",
     title: "Zona 'Meri-Mesteceni'",
+    image: "/meri-mesteceni1.jpg", 
     capacity: "9 Pitch-uri",
     tag: "Grupuri & Relaxare",
     details:
@@ -43,10 +47,11 @@ const zonesData = [
   {
     id: "nuc",
     title: "La Nuc (Camping Random)",
+    image: "/nucul-mamei-ica.jpg", 
     capacity: "8-10 corturi",
     tag: "Umbră Deasă",
     details:
-      "Situată în dreapta drumului de acces, zona este umbroasă după-amiaza. Nucul imens plantat de bunica Ica,  dudul și arțarul  oferă răcoare din belșug. Deși este mai mică decât Livada Liberă, zona are o capacitate de 8-10 corturi mari, de 4-6 persoane.",
+      "Situată în dreapta drumului de acces, zona este umbroasă după-amiaza. Nucul imens plantat de bunica Ica, dudul și arțarul oferă răcoare din belșug. Deși este mai mică decât Livada Liberă, zona are o capacitate de 8-10 corturi mari, de 4-6 persoane.",
   },
 ];
 
@@ -62,6 +67,17 @@ export default function ZonesSection() {
             viewport={{ once: true, margin: "-100px" }}
             className="space-y-16"
           >
+            {/* Titlul secțiunii despre livadă */}
+            <motion.div variants={fadeInUp} className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif text-[var(--foreground)] mb-6">
+                Locul tău în livadă
+              </h2>
+              <p className="text-gray-500 max-w-2xl mx-auto">
+                Fiecare colț al campingului nostru are o poveste și un vibe aparte. 
+                Alege zona care se potrivește cel mai bine stilului tău de campare.
+              </p>
+            </motion.div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-24">
               {zonesData.map((zone) => (
                 <motion.div
@@ -70,6 +86,16 @@ export default function ZonesSection() {
                   variants={fadeInUp}
                   className="group space-y-6 border-t border-[var(--foreground)]/10 pt-12 relative scroll-mt-32"
                 >
+                  {zone.image && (
+                    <div className="w-full h-64 overflow-hidden rounded-xl mb-6 shadow-sm">
+                      <img 
+                        src={zone.image} 
+                        alt={zone.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+
                   <div className="inline-block px-3 py-1 bg-[var(--accent)]/10 text-[var(--accent)] text-[10px] font-bold uppercase tracking-widest rounded-full">
                     {zone.tag}
                   </div>
