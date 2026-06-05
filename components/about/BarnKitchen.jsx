@@ -66,7 +66,9 @@ export default function BarnHub() {
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* LEFT: Grupul Sanitar */}
-            <motion.div variants={fadeInUp} className="space-y-8">
+            <motion.div 
+            id="baie_centrala"
+            variants={fadeInUp} className="space-y-8">
               <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-[12px] border-white rotate-[-1deg]">
                 <Image
                   src="/grajdi.jpg"
@@ -110,7 +112,9 @@ export default function BarnHub() {
             </motion.div>
 
             {/* RIGHT: Bucătăria de vară */}
-            <motion.div variants={fadeInUp} className="space-y-8 lg:mt-16">
+            <motion.div 
+            id="bucatarie_1"
+            variants={fadeInUp} className="space-y-8 lg:mt-16">
               <div className="bg-stone-50/80 p-10 rounded-3xl border border-[var(--accent)]/10 relative">
                 <h3 className="text-3xl font-[family-name:var(--font-serif)] text-[var(--foreground)] mb-6">
                   Bucătăria de vară

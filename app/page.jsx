@@ -5,7 +5,7 @@ import OutdoorBathroom from "@/components/about/OutdoorBathroom";
 import ZonesSection from "@/components/about/ZonesSection";
 import LotruSection from "@/components/activities/LotruSection";
 import BookingMap from "@/components/about/BookingMap";
-import AboutGallery from "@/components/about/AboutGallery"; 
+import AboutGallery from "@/components/about/AboutGallery";
 import SummerKitchen from "@/components/about/SummerKitchen";
 
 export default function Home() {
@@ -20,9 +20,15 @@ export default function Home() {
       </section>
 
       <div id="facilitati" className="scroll-mt-20">
-        <BarnKitchen />
-        <OutdoorBathroom />
-        <SummerKitchen/>
+        <div id="bucatarie_1">
+          <BarnKitchen />
+        </div>
+        <div id="baie_nuc">
+          <OutdoorBathroom />
+        </div>
+        <div id="bucatarie_2">
+          <SummerKitchen />
+        </div>
       </div>
 
       {/* 5. Descrierea zonelor de campare */}
@@ -42,7 +48,6 @@ export default function Home() {
 
       {/* 8. GALERIA - AICI lipsea! */}
       <AboutGallery />
-
     </main>
   );
 }

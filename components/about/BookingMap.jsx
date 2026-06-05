@@ -26,6 +26,13 @@ export default function BookingMap() {
     setTimeout(() => document.getElementById("detalii-zona")?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
   };
 
+  const handleScrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section id="harta-booking" className="py-24 bg-[var(--background)]">
       <FramedSection>
@@ -36,7 +43,6 @@ export default function BookingMap() {
             <TransformWrapper initialScale={1} minScale={1} maxScale={3} centerOnInit={true}>
               {({ zoomIn, zoomOut, resetTransform }) => (
                 <>
-                  {/* Butoanele sunt aici, în afara TransformComponent, dar în interiorul TransformWrapper */}
                   <div className="absolute top-4 right-4 z-[100] flex flex-col gap-2 pointer-events-auto">
                     <button onClick={() => zoomIn()} className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-stone-100 font-bold border border-gray-200 w-10 h-10">+</button>
                     <button onClick={() => zoomOut()} className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-stone-100 font-bold border border-gray-200 w-10 h-10">-</button>
@@ -47,19 +53,18 @@ export default function BookingMap() {
                     <div className="relative w-full cursor-grab active:cursor-grabbing">
                       <img src="/map-base.png" alt="Harta" className="w-full h-auto block pointer-events-none" />
                       <svg viewBox="0 0 1000 1000" className="absolute inset-0 w-full h-full z-20" preserveAspectRatio="none">
-                        {/* Zone Campare (Intacte) */}
                         <rect x="320" y="110" width="80" height="190" fill="transparent" className="cursor-pointer hover:fill-amber-400/20" onClick={() => handleZoneSelect("rulote")} transform="rotate(-15, 360, 195)" />
                         <rect x="280" y="290" width="60" height="220" fill="transparent" className="cursor-pointer hover:fill-emerald-900/20" onClick={() => handleZoneSelect("cires")} />
                         <rect x="360" y="580" width="160" height="270" fill="transparent" className="cursor-pointer hover:fill-green-500/20" onClick={() => handleZoneSelect("gradina")} />
                         <rect x="100" y="810" width="220" height="50" fill="transparent" className="cursor-pointer hover:fill-cyan-500/20" onClick={() => handleZoneSelect("meri")} transform="rotate(5, 210, 835)" />
                         <rect x="200" y="625" width="100" height="80" fill="transparent" className="cursor-pointer hover:fill-green-300/20" onClick={() => handleZoneSelect("nuc")} transform="rotate(-30, 250, 665)" />
-                        {/* Utilitare (Intacte) */}
+                        
                         <circle cx="160" cy="740" r="18" fill="#3b82f6" className="cursor-pointer hover:fill-blue-600" onClick={() => handleZoneSelect("baie_nuc")} />
                         <circle cx="300" cy="240" r="18" fill="#3b82f6" className="cursor-pointer hover:fill-blue-600" onClick={() => handleZoneSelect("baie_centrala")} />
                         <circle cx="300" cy="270" r="18" fill="#ef4444" className="cursor-pointer hover:fill-red-600" onClick={() => handleZoneSelect("bucatarie_1")} />
                         <circle cx="385" cy="800" r="18" fill="#ef4444" className="cursor-pointer hover:fill-red-600" onClick={() => handleZoneSelect("bucatarie_2")} />
                         <circle cx="320" cy="540" r="18" fill="#a855f7" className="cursor-pointer hover:fill-purple-600" onClick={() => handleZoneSelect("gratar")} />
-                        {/* Etichete Pitch-uri (Alinierea ta perfectă) */}
+                        
                         {[...Array(6)].map((_, i) => (
                           <text key={`C${i+1}`} x="310" y={325 + (i * 35)} fill="white" fontSize="16" fontWeight="bold" style={{ textShadow: "0 0 4px rgba(0,0,0,0.5)" }} textAnchor="middle">C{i+1}</text>
                         ))}
@@ -87,13 +92,24 @@ export default function BookingMap() {
                     ))}
                   </div>
 
-                  {zones[selected].type === "camp" && (
-                    <button 
-                      onClick={() => document.getElementById(selected)?.scrollIntoView({ behavior: "smooth", block: "start" })}
-                      className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--accent)] hover:text-emerald-900 transition-all border-b-2 border-[var(--accent)]"
-                    >
-                      Citește mai mult ↗
-                    </button>
+                  {/* Buton vizibil pentru camp OR pentru facilitățile cu ID-uri specifice */}
+                  {(zones[selected].type === "camp" || ["baie_nuc", "bucatarie_2", "bucatarie_1", "baie_centrala"].includes(selected)) && (
+                   <button 
+  onClick={() => {
+    // Debug: să vedem ce ID încercăm să accesăm
+    console.log("Se încearcă scroll la ID:", selected);
+    
+    const element = document.getElementById(selected);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      alert(`Elementul cu id="${selected}" nu a fost găsit în pagină!`);
+    }
+  }}
+  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--accent)] hover:text-emerald-900 transition-all border-b-2 border-[var(--accent)]"
+>
+  Citește mai mult ↗
+</button>
                   )}
                 </motion.div>
               )}
