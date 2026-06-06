@@ -1,49 +1,72 @@
 "use client";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
 import FramedSection from "../common/FramedSection";
-import { fadeInUp } from "../common/animations/motionVariants";
 
-export default function AboutIntro() {
+// Datele familiei rămân neschimbate
+const family = [
+  { name: "Rareș", role: "Constructorul", bio: "El a simțit potențialul livezii moștenite și a început să o transforme într-un loc de reîncărcat bateriile. Rareș este cel care a construit tot ce vedeți, de la vatra de foc la modernizarea vechiului grajd.", image: "/rares.jpg" },
+  { name: "Măriuca", role: "Gazda", bio: "Ea l-a sprijinit pe Rareș, dorind ca terenul de la bunicii ei să își găsească o utilitate modernă. Păstrează curățenia, primește oaspeții, le oferă ajutor și indicații, se ocupă de promovare și de rezervări.", image: "/mariuca.jpg" },
+  { name: "Ilinca", role: "Mica Exploratoare", bio: "La 3 ani jumătate, Ilinca este ghidul neoficial. Hrănește câinii, verifică hamacele, își ajută părinții să ude florile. Crește liberă și învață în fiecare zi cât de importantă este natura.", image: "/ilinca.jpg" },
+];
+
+export default function AboutContent() {
   return (
-    <>
-      {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
-        <Image
-          src="/about-intro-websafe.jpg"
-          alt="Camping at night"
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Overlay subtil pentru a face tranziția spre secțiunea următoare mai fină */}
-        <div className="absolute inset-0 bg-black/10" />
-      </section>
-
-      {/* Framed Text Section */}
+    <section className="py-20 bg-[#F9F9F6]">
       <FramedSection>
-        <motion.div
-          className="text-center space-y-8 py-10" // Spațiere puțin mai generoasă
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-        >
-          {/* Am schimbat text-teal-800 cu un stil care folosește font-serif-ul tău */}
-          <h1 className="text-4xl md:text-6xl font-[family-name:var(--font-serif)] font-medium text-[var(--foreground)]">
-            Despre noi
-          </h1>
-          
-          {/* Am schimbat stone-700 cu foreground-ul tău organic și am reglat dimensiunea */}
-          <p className="text-base md:text-lg font-sans text-[var(--foreground)] opacity-85 leading-relaxed max-w-2xl mx-auto tracking-wide">
-            Povestea noastră începe cu dragostea pentru natură și se continuă cu fiecare călător care ne trece pragul.
-            Refugiul nostru este despre liniște, conexiune și simplitate atentă.
-          </p>
-          
-          {/* Un mic element decorativ (opțional) în culoarea accentului tău */}
-          <div className="w-12 h-[1px] bg-[var(--accent)] mx-auto opacity-50" />
-        </motion.div>
+        {/* Titlu și Intro */}
+        <div className="text-center mb-20 px-6">
+          <motion.h2 
+            initial={{ opacity: 0, y: 15 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            className="text-3xl md:text-4xl font-serif text-teal-900 mb-6"
+          >
+            Povestea noastră
+          </motion.h2>
+          <div className="w-12 h-[2px] bg-amber-500/50 mx-auto mb-10" />
+          <div className="max-w-3xl mx-auto">
+            <p className="text-[17px] md:text-[18px] leading-relaxed text-stone-800 font-serif italic tracking-wide">
+              &ldquo;Ne-am dorit să valorificăm terenul moștenit de la străbuni, fără
+              însă să stricăm farmecul natural al acestei grădini mari, cu pomi
+              plantați de bunici. Fiind așezați lângă râu, pe drumul care
+              parcurge Valea Lotrului, am sesizat nevoia turiștilor de a campa
+              în această zonă frumoasă și ne adresăm în special iubitorilor
+              de simplitate. Primii oaspeți i-am primit în 2021 și de atunci
+              continuăm să îmbunătățim facilitățile și să extindem zona umbroasă.&rdquo;
+            </p>
+          </div>
+        </div>
+
+        {/* Grila Familiei */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {family.map((member, i) => (
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ delay: i * 0.1 }} 
+              className="group text-center"
+            >
+              <div className="relative aspect-square w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-[8px] border-white shadow-lg bg-stone-100">
+                <Image 
+                  src={member.image} 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                  alt={member.name} 
+                  sizes="192px" 
+                  quality={90} 
+                />
+              </div>
+              <h3 className="text-xl font-serif text-teal-900 mb-1">{member.name}</h3>
+              <p className="text-amber-600 text-[9px] uppercase tracking-[0.25em] font-bold mb-3">{member.role}</p>
+              <p className="text-stone-600 leading-relaxed text-[13px] px-4 font-normal italic">{member.bio}</p>
+            </motion.div>
+          ))}
+        </div>
       </FramedSection>
-    </>
+    </section>
   );
 }
