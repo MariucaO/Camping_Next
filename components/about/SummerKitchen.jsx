@@ -44,8 +44,8 @@ export default function SummerKitchenPage() {
                 Foișor și bucătărie <span className="text-[var(--accent)]">Zona din spate a campingului</span>
               </motion.h2>
               <motion.div variants={fadeInUp} className="w-20 h-1 bg-[var(--accent)] mx-auto rounded-full opacity-60" />
-              <motion.p variants={fadeInUp} className="text-[var(--foreground)]/80 max-w-2xl mx-auto italic text-lg leading-relaxed font-sans font-medium pt-4">
-                "Pentru weekendurile mai aglomerate, ne-am dorit să construim o a doua bucătărie de vară și un alt loc de luat masa. Noua construcție este amplasată între <strong>Livada Liberă</strong> și <strong>Meri&Mesteceni</strong>"
+              <motion.p variants={fadeInUp} className="text-[15px] md:text-[16px] leading-relaxed text-stone-700 font-normal font-sans">
+                Pentru weekendurile mai aglomerate, ne-am dorit să construim o a doua bucătărie de vară și un alt loc de luat masa. Noua construcție este amplasată între <strong>Livada Liberă</strong> și <strong>Meri&Mesteceni</strong>.
               </motion.p>
             </div>
 
@@ -71,7 +71,7 @@ export default function SummerKitchenPage() {
               <motion.div variants={fadeInUp} className="space-y-8">
                 <div className="bg-[var(--foreground)]/5 p-10 rounded-[2rem] border border-[var(--accent)]/20 h-full">
                   <h3 className="text-3xl font-[family-name:var(--font-serif)] text-[var(--foreground)] mb-6">Spațiul Utilitar</h3>
-                  <p className="text-sm text-[var(--foreground)]/80 leading-relaxed mb-8">
+                  <p className="text-sm text-[var(--foreground)] font-medium leading-relaxed opacity-90">
                    Această bucătărie-foișor, cu loc generos de luat masa, acoperit, este construită în central în gradina- camping din spate. Pentru a observa corect unde este situată, vă invităm să vizitați harta interactivă de mai jos.
                   </p>
                   <div className="grid grid-cols-2 gap-4">

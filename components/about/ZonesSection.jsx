@@ -3,7 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FramedSection from "../common/FramedSection";
-import { containerStagger, fadeInUp } from "../common/animations/motionVariants";
+import {
+  containerStagger,
+  fadeInUp,
+} from "../common/animations/motionVariants";
 
 // 1. Componenta pentru Slider
 function ImageSlider({ images, title }) {
@@ -25,11 +28,21 @@ function ImageSlider({ images, title }) {
           className="w-full h-full object-cover"
         />
       </AnimatePresence>
-      
+
       {images.length > 1 && (
         <>
-          <button onClick={prev} className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full hover:bg-white transition-colors opacity-0 group-hover/slider:opacity-100 shadow-md z-10">❮</button>
-          <button onClick={next} className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full hover:bg-white transition-colors opacity-0 group-hover/slider:opacity-100 shadow-md z-10">❯</button>
+          <button
+            onClick={prev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full hover:bg-white transition-colors opacity-0 group-hover/slider:opacity-100 shadow-md z-10"
+          >
+            ❮
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full hover:bg-white transition-colors opacity-0 group-hover/slider:opacity-100 shadow-md z-10"
+          >
+            ❯
+          </button>
         </>
       )}
     </div>
@@ -40,10 +53,11 @@ const zonesData = [
   {
     id: "rulote",
     title: "Poiana Călătoare (VanLife)",
-    images: ["/camper-zone2.jpg","/camper-zone1.jpg","/poiana_calatoare.jpg" ], // Adaugă mai multe imagini aici: ["/poza1.jpg", "/poza2.jpg"]
+    images: ["/camper-zone2.jpg", "/camper-zone1.jpg", "/poiana_calatoare.jpg"], // Adaugă mai multe imagini aici: ["/poza1.jpg", "/poza2.jpg"]
     capacity: "4 Echipaje",
     tag: "Van Life",
-    details: "Situată imediat la intrare, această zonă este destinată exclusiv rulotelor, autorulotelor sau turiștilor care vor să doarmă în mașina personală/ cort pe mașină. Oaspeții au acces la curent electric, deversare apă, apă curentă, dar și la restul facilităților pe care le are campingul.",
+    details:
+      "Situată imediat la intrare, această zonă este destinată exclusiv rulotelor, autorulotelor sau turiștilor care vor să doarmă în mașina personală/ cort pe mașină. Oaspeții au acces la curent electric, deversare apă, apă curentă, dar și la restul facilităților pe care le are campingul.",
   },
   {
     id: "cires",
@@ -51,15 +65,22 @@ const zonesData = [
     images: ["/la_cires2.jpg", "/la-cires2.jpg"],
     capacity: "6 Pitch-uri",
     tag: "Confort & Acces",
-    details: "Situată în continuarea Șurii Vechi, aici avem locuri generoase de cort pentru 1-3 persoane. Zona este semiumbroasă datorită unui cireș păsăresc mare și a prunilor bătrâni.",
+    details:
+      "Situată în continuarea Șurii Vechi, aici avem locuri generoase de cort pentru 1-3 persoane. Zona este semiumbroasă datorită unui cireș păsăresc mare și a prunilor bătrâni.",
   },
   {
     id: "gradina",
     title: "Livada Liberă (Camping Random)",
-    images: ["/gradina-libera1.jpg", "/about-camping-12.jpg", "/gradina-libera2.jpg", "gradina-libera5.jpg"],
+    images: [
+      "/gradina-libera1.jpg",
+      "/about-camping-12.jpg",
+      "/gradina-libera2.jpg",
+      "gradina-libera5.jpg",
+    ],
     capacity: "+20 de corturi",
     tag: "Camp Life",
-    details: "Zona vastă din spatele campingului, fără spații delimitate. Oaspeții își pot alege locul oriunde, bucurându-se de umbra deasă a nucului bătrân și a pomilor fructiferi.",
+    details:
+      "Zona vastă din spatele campingului, fără spații delimitate. Oaspeții își pot alege locul oriunde, bucurându-se de umbra deasă a nucului bătrân și a pomilor fructiferi.",
   },
   {
     id: "meri",
@@ -67,7 +88,8 @@ const zonesData = [
     images: ["/meri-mesteceni1.jpg"],
     capacity: "9 Pitch-uri",
     tag: "Grupuri & Relaxare",
-    details: "Aici se află pitch-uri mari, delimitate de mesteceni tineri și plante cățărătoare. Ideale pentru corturi de 2-4 persoane.",
+    details:
+      "Aici se află pitch-uri mari, delimitate de mesteceni tineri și plante cățărătoare. Ideale pentru corturi de 2-4 persoane.",
   },
   {
     id: "nuc",
@@ -75,7 +97,8 @@ const zonesData = [
     images: ["/la-nuc.jpg", "/nucul-mamei-ica2.jpg", "/la-nuc3.jpg"],
     capacity: "8-10 corturi",
     tag: "Umbră Deasă",
-    details: "Situată în dreapta drumului de acces, zona este umbroasă după-amiaza. Nucul imens, dudul și arțarul oferă răcoare din belșug.",
+    details:
+      "Situată în dreapta drumului de acces, zona este umbroasă după-amiaza. Nucul imens, dudul și arțarul oferă răcoare din belșug.",
   },
 ];
 
@@ -95,9 +118,11 @@ export default function ZonesSection() {
               <h2 className="text-4xl md:text-5xl font-serif text-[var(--foreground)] mb-6">
                 Locul tău în livadă
               </h2>
-              <p className="text-gray-500 max-w-2xl mx-auto">
-                Fiecare colț al campingului nostru are o poveste și un vibe aparte. 
-                Alege zona care se potrivește cel mai bine stilului tău de campare.
+              <p className="text-[15px] md:text-[16px] leading-relaxed
+                text-stone-700 font-normal font-sans">
+                 Fiecare colț al
+                campingului nostru are o poveste și un vibe aparte. Alege zona
+                care se potrivește cel mai bine stilului tău de campare.
               </p>
             </motion.div>
 

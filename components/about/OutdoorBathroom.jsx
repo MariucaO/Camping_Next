@@ -50,9 +50,9 @@ export default function OutdoorBathroom() {
               />
               <motion.p 
                 variants={fadeInUp} 
-                className="text-[var(--foreground)] mt-6 max-w-2xl mx-auto italic text-lg leading-relaxed font-medium font-sans"
+                className="text-[15px] md:text-[16px] leading-relaxed text-stone-700 font-normal font-sans"
               >
-                &ldquo;Situat între Nucul Icai și Meri-Mesteceni, acest grup sanitar deservește zonele din spate. Dușurile în aer liber sunt experiența preferată a oaspeților noștri în zilele de vară.&rdquo;
+                Situat între Nucul Icai și Meri-Mesteceni, acest grup sanitar deservește zonele din spate. Dușurile în aer liber sunt experiența preferată a oaspeților noștri în zilele de vară.
               </motion.p>
             </div>
 
@@ -95,7 +95,7 @@ export default function OutdoorBathroom() {
               </div>
               
               <div className="mt-12 pt-10 border-t border-[var(--foreground)]/5 flex flex-col md:flex-row items-center justify-between gap-8">
-                <p className="text-[var(--foreground)] text-sm max-w-md text-center md:text-left leading-relaxed font-medium">
+                <p className="text-[15px] md:text-[16px] leading-relaxed text-stone-700 font-normal font-sans">
                   Construită manual din bambus și materiale naturale, baia oferă o oglindă șic și două lavoare simple pentru igiena de dimineață.
                 </p>
                 <div className="flex gap-4">
