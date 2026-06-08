@@ -28,6 +28,11 @@ const images = [
   "/about-camping-2.jpg",
   "/about-camping-3.jpg",
   "/bg-camping-5.jpg",
+  "/about-camping-5.jpg",
+  "/about-camping-10.jpg",
+  "/about-camping-9.jpg",
+  "/about-details.jpg",
+  "/about-camping-12.jpg",
 ];
 
 export default function AboutGallery() {
@@ -35,7 +40,7 @@ export default function AboutGallery() {
 
   return (
     // În AboutGallery.jsx, schimbă linia 40 (sau unde începe section)
-   <section id="album-familie" className="bg-[#F9F9F6] py-24">
+    <section id="album-familie" className="bg-[#F9F9F6] py-24">
       <FramedSection>
         {/* Header Galerie - Stil finuț adaptat */}
         <motion.div

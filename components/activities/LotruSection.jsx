@@ -7,7 +7,7 @@ export default function LotruSection() {
   if (!activitiesData) return <div>Se încarcă...</div>;
 
   return (
-    <section id="activitati" className="py-24 bg-stone-50">
+    <section id="activitati" className="py-24 bg-stone-200">
       {/* AICI AM RECREAT STILUL ELEGANT (FĂRĂ IMPORTURI):
         max-w-5xl = lățimea îngustă și elegantă
         bg-stone-100 = fundalul secțiunii
