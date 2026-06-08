@@ -66,7 +66,7 @@ const zonesData = [
     capacity: "6 Pitch-uri",
     tag: "Confort & Acces",
     details:
-      "Situată în continuarea Șurii Vechi, aici avem locuri generoase de cort pentru 1-3 persoane. Zona este semiumbroasă datorită unui cireș păsăresc mare și a prunilor bătrâni.",
+      "Aflată în continuarea Grăjdiuțului Vechi, aici avem 6 locuri generoase de cort pentru 1-3 persoane. Zona este semiumbroasă datorită unui cireș păsăresc mare și a prunilor bătrâni situați pe marginea gardului. Am extins zona umbroasă, plantând frasini, tei și cățărătoare.",
   },
   {
     id: "gradina",
@@ -80,7 +80,7 @@ const zonesData = [
     capacity: "+20 de corturi",
     tag: "Camp Life",
     details:
-      "Zona vastă din spatele campingului, fără spații delimitate. Oaspeții își pot alege locul oriunde, bucurându-se de umbra deasă a nucului bătrân și a pomilor fructiferi.",
+      "Livada fâneață este o zonă vastă din spatele campingului, fără spații delimitate. Oaspeții își pot alege locul oriunde, bucurându-se de umbra deasă a nucului bătrân și a pomilor fructiferi. Spațiul este foarte generos, având o capacitate de peste 20 de corturi.",
   },
   {
     id: "meri",
@@ -89,7 +89,7 @@ const zonesData = [
     capacity: "9 Pitch-uri",
     tag: "Grupuri & Relaxare",
     details:
-      "Aici se află pitch-uri mari, delimitate de mesteceni tineri și plante cățărătoare. Ideale pentru corturi de 2-4 persoane.",
+      "Aflată în spatele campingului, între grupul sanitar Baia sub Cer și Foișor și Bucătăria de vară, aici se află pitch-uri mari, delimitate de mesteceni tineri și plante cățărătoare. În mijlocul acestei zone se află 3 meri mari, iar zona este ideală pentru corturi mari, de 4-6 persoane.",
   },
   {
     id: "nuc",
@@ -98,7 +98,7 @@ const zonesData = [
     capacity: "8-10 corturi",
     tag: "Umbră Deasă",
     details:
-      "Situată în dreapta drumului de acces, zona este umbroasă după-amiaza. Nucul imens, dudul și arțarul oferă răcoare din belșug.",
+      "Situată în dreapta drumului de acces, este a doua zonă de campare la liber și are o capacitate de 8-10 corturi mari. Zona este umbroasă după-amiaza datorită nucului imens, dudului și arțarului care oferă răcoare din belșug.",
   },
 ];
 
