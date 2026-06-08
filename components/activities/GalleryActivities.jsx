@@ -5,22 +5,18 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import "yet-another-react-lightbox/styles.css";
 
-export default function GalleryActivities({
-  openIndex,
-  setOpneIndex,
-  activities,
-}) {
+export default function GalleryActivities({ openIndex, setOpenIndex, activities }) {
   const activeGallery =
-    openIndex >= 0 ? activities[openIndex].gallery.map((src) => ({ src })) : [];
+    openIndex >= 0 && activities[0]?.gallery 
+      ? activities[0].gallery.map((src) => ({ src })) 
+      : [];
+      
   return (
     <Lightbox
       open={openIndex >= 0}
-      close={() => setOpneIndex(-1)}
+      close={() => setOpenIndex(-1)}
       slides={activeGallery}
       plugins={[Zoom, Slideshow]}
-      animation={{ fade: 300 }}
-      carousel={{ infinite: false }}
-      zoom={{ maxZoomPixelRatio: 3 }}
     />
   );
 }

@@ -1,12 +1,19 @@
+"use client"; // Ne asigurăm că este componentă client
+
+import dynamic from 'next/dynamic';
 import Hero from "@/components/Hero";
 import AboutContent from "@/components/about/AboutContent";
 import BarnKitchen from "@/components/about/BarnKitchen";
 import OutdoorBathroom from "@/components/about/OutdoorBathroom";
 import ZonesSection from "@/components/about/ZonesSection";
-import LotruSection from "@/components/activities/LotruSection";
 import BookingMap from "@/components/about/BookingMap";
 import AboutGallery from "@/components/about/AboutGallery";
 import SummerKitchen from "@/components/about/SummerKitchen";
+
+// Importăm LotruSection dinamic pentru a evita erorile de hidratare/compilare
+const LotruSection = dynamic(() => import("@/components/activities/LotruSection"), {
+  ssr: false, // Nu randa pe server, doar în browser
+});
 
 export default function Home() {
   return (
@@ -46,7 +53,7 @@ export default function Home() {
         <LotruSection />
       </section>
 
-      {/* 8. GALERIA - AICI lipsea! */}
+      {/* 8. GALERIA */}
       <AboutGallery />
     </main>
   );

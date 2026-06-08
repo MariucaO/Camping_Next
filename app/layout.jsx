@@ -28,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ro">
-      <body className="relative min-h-screen">
+      <body className={`${cormorant.variable} ${inter.variable} font-sans relative min-h-screen`}>
         <Navbar />
         <main>{children}</main>
         <BackToTop />

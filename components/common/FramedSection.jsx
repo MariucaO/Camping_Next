@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { containerStagger, fadeInUp } from "./animations/motionVariants";
 
+
 export default function FramedSection({ children }) {
   return (
     <section className="bg-stone-200 py-24 px-4">
