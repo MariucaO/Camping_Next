@@ -27,7 +27,7 @@ const family = [
 
 export default function AboutContent() {
   return (
-    <section className="py-20 bg-[#F9F9F6]">
+    <section id="poveste" className="py-20 bg-[#F9F9F6]">
       <FramedSection>
         {/* 1. VECHIUL CONȚINUT */}
         <div className="text-center mb-20 px-6">
