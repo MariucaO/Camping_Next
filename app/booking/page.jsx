@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import FramedSection from "../../components/common/FramedSection";
+import FramedSection from "@/components/common/FramedSection";
 
 export default function BookingPage() {
   const [isOpen, setIsOpen] = useState(false);
