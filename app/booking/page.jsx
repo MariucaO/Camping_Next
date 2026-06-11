@@ -44,29 +44,49 @@ export default function BookingPage() {
             >
               <div className="overflow-hidden">
                 <div className="bg-[var(--background)] p-6 border border-[var(--accent)]/20 rounded-lg">
-                  <h3 className="font-[family-name:var(--font-serif)] text-xl text-[var(--foreground)] mb-4">Tarife 2026</h3>
-                  <ul className="space-y-3 text-[var(--foreground)] text-sm">
-                    <li className="flex justify-between border-b border-[var(--foreground)]/10 pb-2">
-                      <span>Loc cort</span> <span className="font-bold">50 RON</span>
+                  <h3 className="font-[family-name:var(--font-serif)] text-xl text-[var(--foreground)] mb-6">Tarife 2026</h3>
+                  <ul className="space-y-6 text-[var(--foreground)] text-sm">
+                    
+                    <li className="border-b border-[var(--foreground)]/10 pb-4">
+                      <div className="flex justify-between font-bold mb-1">
+                        <span>Cort (Zone: Cirș, Meri Mesteceni)</span>
+                        <span>45 RON/pers</span>
+                      </div>
+                      <p className="text-[11px] opacity-70 italic">Include: cort pe mașină sau dormit în mașină</p>
                     </li>
-                    <li className="flex justify-between border-b border-[var(--foreground)]/10 pb-2">
-                      <span>Rulotă</span> <span className="font-bold">80 RON</span>
+
+                    <li className="border-b border-[var(--foreground)]/10 pb-4">
+                      <div className="flex justify-between font-bold">
+                        <span>Cort (Zone Random)</span>
+                        <span>50 RON/pers</span>
+                      </div>
                     </li>
-                    <li className="flex justify-between">
-                      <span>Persoană</span> <span className="font-bold">20 RON</span>
+
+                    <li className="border-b border-[var(--foreground)]/10 pb-4">
+                      <div className="flex justify-between font-bold">
+                        <span>Rulotă (max. 4 persoane)</span>
+                        <span>150 RON/zi</span>
+                      </div>
                     </li>
+
                   </ul>
+                  <p className="mt-4 text-[10px] uppercase tracking-wider opacity-50 italic">
+                    * Prețurile sunt per persoană, excepție rulota.
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Iframe Formular */}
-            <iframe 
-              src="https://tally.so/r/LZ6X6G?transparentBackground=1" 
-              className="w-full h-[700px]"
-              frameBorder="0" 
-              title="Rezervare Camping"
-            />
+           {/* Iframe Formular - varianta simplificată */}
+<div className="w-full mt-8">
+  <iframe 
+    src="https://tally.so/r/LZ6X6G?transparentBackground=1" 
+    className="w-full h-[800px]" 
+    frameBorder="0" 
+    title="Rezervare Camping"
+  />
+</div>
           </div>
         </div>
       </FramedSection>

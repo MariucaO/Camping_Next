@@ -36,7 +36,7 @@ export default function Hero() {
         <p className="mt-8 text-sm sm:text-lg text-white/90 font-sans font-light max-w-2xl mx-auto leading-relaxed tracking-wide drop-shadow-sm">
           Am transformat livada familiei într-un spațiu de campare cochet, cu
           nuci, duzi și cireși bătrâni. Valea Lotrului este o frumusețe, iar
-          festivalul de blues este la câțiva pași.
+          festivalul de muzică Summer Camp Brezoi este la câțiva pași.
         </p>
 
         {/* Butoane Minimaliste */}
