@@ -45,7 +45,7 @@ export default function SummerKitchenPage() {
               </motion.h2>
               <motion.div variants={fadeInUp} className="w-20 h-1 bg-[var(--accent)] mx-auto rounded-full opacity-60" />
               <motion.p variants={fadeInUp} className="text-[15px] md:text-[16px] leading-relaxed text-stone-700 font-normal font-sans">
-                Pentru weekendurile mai aglomerate, ne-am dorit să construim o a doua bucătărie de vară și un alt loc de luat masa. Noua construcție este amplasată între <strong>Livada Liberă</strong> și <strong>Meri&Mesteceni</strong>.
+                Pentru weekendurile mai aglomerate, ne-am dorit să construim o a doua bucătărie de vară și un alt loc de luat masa. Noua construcție este amplasată între <strong>Livada Liberă</strong> și <strong>Meri Mesteceni</strong>.
               </motion.p>
             </div>
 
