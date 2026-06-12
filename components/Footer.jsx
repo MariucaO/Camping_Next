@@ -2,9 +2,10 @@
 
 import { FiMapPin, FiPhone, FiInstagram, FiFacebook } from "react-icons/fi";
 import FramedSection from "./common/FramedSection";
+import { useLanguage } from "../app/context/LanguageContext";
 
 export default function Footer() {
-  // Asigură-te că link-ul este complet
+  const { t } = useLanguage();
   const googleMapsUrl = "https://www.google.com/maps"; 
 
   return (
@@ -20,23 +21,18 @@ export default function Footer() {
                 Grădina cu <span className="text-[var(--accent)]">flori</span>
               </h3>
               <p className="text-[var(--foreground)] text-sm leading-relaxed max-w-[280px] mx-auto md:mx-0 font-medium font-sans">
-                O livadă de familie transformată în refugiu pentru iubitorii de natură. Simplitate, liniște și spiritul Văii Lotrului.
+                {t.footer.descriere}
               </p>
             </div>
 
-            {/* Coloana 2: Contact - Iconițe și Link-uri active */}
+            {/* Coloana 2: Contact - Am pus ambele numere înapoi */}
             <div className="space-y-6">
               <h4 className="font-bold uppercase tracking-[3px] text-[11px] text-[var(--accent)]">
-                Contact & Locație
+                {t.footer.contactTitlu}
               </h4>
               <ul className="space-y-4 text-sm font-sans text-[var(--foreground)] font-medium">
                 <li>
-                  <a
-                    href={googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center md:justify-start gap-3 hover:text-[var(--accent)] transition-colors group"
-                  >
+                  <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 hover:text-[var(--accent)] transition-colors group">
                     <FiMapPin className="text-[var(--accent)] text-lg" />
                     <span>Brezoi, Vâlcea (Valea Lotrului)</span>
                   </a>
@@ -59,31 +55,17 @@ export default function Footer() {
             {/* Coloana 3: Social */}
             <div className="space-y-6">
               <h4 className="font-bold uppercase tracking-[3px] text-[11px] text-[var(--accent)]">
-                Urmărește-ne
+                {t.footer.socialTitlu}
               </h4>
               <div className="flex justify-center md:justify-start gap-8 text-[var(--foreground)]">
-                <a
-                  href="https://www.instagram.com/camping.gradina.cu.flori"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-2xl hover:text-[var(--accent)] transition-all transform hover:-translate-y-1"
-                >
-                  <FiInstagram />
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100083178489940"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-2xl hover:text-[var(--accent)] transition-all transform hover:-translate-y-1"
-                >
-                  <FiFacebook />
-                </a>
+                <a href="https://www.instagram.com/camping.gradina.cu.flori" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[var(--accent)] transition-all transform hover:-translate-y-1"><FiInstagram /></a>
+                <a href="https://www.facebook.com/profile.php?id=100083178489940" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[var(--accent)] transition-all transform hover:-translate-y-1"><FiFacebook /></a>
               </div>
             </div>
           </div>
 
           <div className="mt-20 pt-8 border-t border-[var(--foreground)]/10 text-center text-[var(--foreground)] text-[11px] uppercase tracking-[3px] font-bold">
-            <p>© {new Date().getFullYear()} Camping Grădina cu Flori</p>
+            <p>{t.footer.copyright} {new Date().getFullYear()} Camping Grădina cu Flori</p>
           </div>
         </div>
       </FramedSection>
