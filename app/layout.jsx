@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import BackToTop from "@/components/BackToTop";
+import { LanguageProvider } from "./context/LanguageContext"; // <--- Importă asta
 
-// 1. Definitie Fonturi
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -17,23 +17,22 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-// 2. Metadata
 export const metadata = {
   title: "Camping Grădina cu flori | Brezoi",
-  description:
-    "Livadă camping, zone delimitate, hamace și natură pe Valea Lotrului. La 10 minute de Blues Festival.",
+  description: "Livadă camping, zone delimitate, hamace și natură pe Valea Lotrului.",
 };
 
-// 3. Functia RootLayout obligatorie
 export default function RootLayout({ children }) {
   return (
     <html lang="ro">
       <body className={`${cormorant.variable} ${inter.variable} font-sans relative min-h-screen`}>
-        <Navbar />
-        <main>{children}</main>
-        <BackToTop />
-        <WhatsAppButton />
-        <Footer />
+        <LanguageProvider> {/* <--- Începe aici */}
+          <Navbar />
+          <main>{children}</main>
+          <BackToTop />
+          <WhatsAppButton />
+          <Footer />
+        </LanguageProvider> {/* <--- Se termină aici */}
       </body>
     </html>
   );
