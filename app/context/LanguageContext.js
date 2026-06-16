@@ -240,7 +240,7 @@ export function LanguageProvider({ children }) {
           },
           nuc: {
             name: "La Nuc (Camping Random)",
-            desc: "Zonă de campare la liber în dreapta livezii din spate. Are o capacitate de 8-10 corturi mari.",
+            desc: "Zonă de campare la liber în partea dreaptă a livezii din spate. Are o capacitate de 8-10 corturi mari.",
             features: ["🌳 Umbră", "🏕️ Orice mărime cort", "🔌 Curent"],
           },
           baie_nuc: {

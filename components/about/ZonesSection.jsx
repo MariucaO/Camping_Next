@@ -16,7 +16,14 @@ function ImageSlider({ images, title }) {
 
 export default function ZonesSection() {
   const { t } = useLanguage();
-  const z = t.zonesSection || {};
+  
+  // Dacă t sau t.zonesSection nu există încă, returnăm un fragment gol
+  // Asta previne eroarea de tip "Cannot read property 'rulote' of undefined"
+  if (!t || !t.zonesSection) {
+    return <section className="py-24" id="zone">Loading...</section>;
+  }
+
+  const z = t.zonesSection;
 
   const zonesData = [
     { id: "rulote", images: ["/camper-zone2.jpg", "/camper-zone1.jpg", "/poiana_calatoare.jpg"], capacity: "4 Echipaje", tag: "Van Life", ...z.rulote },
@@ -25,6 +32,8 @@ export default function ZonesSection() {
     { id: "meri", images: ["/meri-mesteceni1.jpg"], capacity: "9 Pitch-uri", tag: "Grupuri & Relaxare", ...z.meri },
     { id: "nuc", images: ["/la-nuc.jpg", "/nucul-mamei-ica2.jpg", "/la-nuc3.jpg"], capacity: "8-10 corturi", tag: "Umbră Deasă", ...z.nuc },
   ];
+
+  // Restul codului rămâne identic...
 
   return (
     <section id="zone" className="py-24 bg-[var(--background)]">
