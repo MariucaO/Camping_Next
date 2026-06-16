@@ -4,40 +4,27 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import FramedSection from "../common/FramedSection";
-
-const zones = {
-  rulote: { id: "rulote", name: "Poiana Călătoare(VanLife)", type: "camp", desc: "Zonă dedicată rulotelor și autorulotelor, situată imediat la intrare. Are o capacitate de maxim 4 rulote/autorulote mari.", features: ["🚐 Acces facil", "⚡ Curent", "🌞 Soare din belșug", "⬇️ Deversare ape", "🚰 Apă", "🚐 Rulote", "🚐 Autorulote", "🚗⛺ Cort pe mașină"] },
-  cires: { id: "cires", name: "La Cireș", type: "camp", items: ["C1", "C2", "C3", "C4", "C5", "C6"], desc: "6 locuri mari, delimitate, pentru corturi de 1-3 persoane.", features: ["🌳 Umbră", "🌳🌤️ Semiumbra", "🧺 Intimitate", "🔌 Curent"] },
-  gradina: { id: "gradina", name: "Livada Liberă(Camping Random)", type: "camp", desc: "Spațiu vast de campare la liber în partea stângă a livezii, cu o capacitate de peste 20 de corturi.", features: ["🌳 Umbră", "🌳🌤️ Semiumbra", "🌞 Soare din belșug", "🪁 Spațiu joacă", "🏕️ Orice mărime cort", "🔌 Curent"] },
-  meri: { id: "meri", name: "Meri & Mesteceni", type: "camp", items: ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9"], desc: "9 locuri mari, delimitate, aflate în partea din spate a campingului.", features: ["🍏 Livadă", "📏 Locuri generoase", "🔌 Curent"] },
-  nuc: { id: "nuc", name: "La Nuc (Camping Random)", type: "camp", desc: "Zonă de campare la liber în dreapta livezii din spate. Are o capacitate de 8-10 corturi mari.", features: ["🌳 Umbră ", "🏕️ Orice mărime cort", "🔌 Curent"] },
-  baie_nuc: { id: "baie_nuc", name: "Baia sub Cer", type: "utility", desc: "Grup sanitar complet utilat, situat în zona din spate a campingului.", features: ["🚿 3 Dușuri", "🚰 2 Chiuvete", "🚻 3 WC-uri", "🔥 Apă Caldă"] },
-  baie_centrala: { id: "baie_centrala", name: "Grup Sanitar Central", type: "utility", desc: "Toalete accesibile rapid din zona centrală a campingului.", features: ["🚿 3 Dușuri", "🚰 3 Chiuvete", "🚻 3 WC-uri", "🔥 Apă Caldă"] },
-  bucatarie_1: { id: "bucatarie_1", name: "Bucătăria Poiana Călătoare", type: "utility", desc: "Bucătărie utilată situată lângă zona de rulote.", features: ["🚰 Chiuvetă", "🍳 Plită", "🧊 2 Frigidere", "📶 Wi-Fi"] },
-  bucatarie_2: { id: "bucatarie_2", name: "Bucătăria de Vară", type: "utility", desc: "A doua bucătărie utilată, situată central în zona din spate a campingului.", features: ["🚰 Chiuvetă", "🧊 2 Frigidere", "🍽️ Zonă mese"] },
-  gratar: { id: "gratar", name: "Zona de grătar", type: "utility", desc: "Loc amenajat pentru foc și pregătirea mâncării la grătar.", features: ["🔥 Grătar", "🍢 Ustensile", "🪑 Masă de sprijin ", "🚰 Apă"] },
-};
+import { useLanguage } from "../../app/context/LanguageContext"; // Ajustează calea către contextul tău
 
 export default function BookingMap() {
   const [selected, setSelected] = useState(null);
+  const { t } = useLanguage();
 
   const handleZoneSelect = (key) => {
     setSelected(key);
-    setTimeout(() => document.getElementById("detalii-zona")?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
-  };
-
-  const handleScrollTo = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    setTimeout(() => {
+      const element = document.getElementById("detalii-zona");
+      if (element) element.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
   };
 
   return (
     <section id="harta-booking" className="py-24 bg-[var(--background)]">
       <FramedSection>
         <div className="max-w-5xl mx-auto px-4 space-y-16">
-          <h2 className="text-center text-4xl md:text-5xl font-serif text-[var(--foreground)]">Alege locul tău în livadă</h2>
+          <h2 className="text-center text-4xl md:text-5xl font-serif text-[var(--foreground)]">
+            {t.map.title}
+          </h2>
 
           <div className="bg-white rounded-[3rem] border border-[var(--foreground)]/10 shadow-lg overflow-hidden relative">
             <TransformWrapper initialScale={1} minScale={1} maxScale={3} centerOnInit={true}>
@@ -46,7 +33,7 @@ export default function BookingMap() {
                   <div className="absolute top-4 right-4 z-[100] flex flex-col gap-2 pointer-events-auto">
                     <button onClick={() => zoomIn()} className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-stone-100 font-bold border border-gray-200 w-10 h-10">+</button>
                     <button onClick={() => zoomOut()} className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-stone-100 font-bold border border-gray-200 w-10 h-10">-</button>
-                    <button onClick={() => resetTransform()} className="bg-white/90 px-3 py-1 rounded-full shadow-lg hover:bg-stone-100 text-[10px] font-bold uppercase tracking-widest border border-gray-200">Reset</button>
+                    <button onClick={() => resetTransform()} className="bg-white/90 px-3 py-1 rounded-full shadow-lg hover:bg-stone-100 text-[10px] font-bold uppercase tracking-widest border border-gray-200">{t.map.reset}</button>
                   </div>
 
                   <TransformComponent wrapperStyle={{ width: "100%", height: "100%" }} contentStyle={{ width: "100%" }}>
@@ -83,34 +70,21 @@ export default function BookingMap() {
             <AnimatePresence mode="wait">
               {selected && (
                 <motion.div key={selected} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-white p-10 rounded-[2.5rem] border border-[var(--foreground)]/10">
-                  <h3 className="text-3xl font-serif mb-4">{zones[selected].name}</h3>
-                  <p className="text-lg italic text-gray-600 mb-6">{zones[selected].desc}</p>
+                  <h3 className="text-3xl font-serif mb-4">{t.map.zones[selected].name}</h3>
+                  <p className="text-lg italic text-gray-600 mb-6">{t.map.zones[selected].desc}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-8">
-                    {zones[selected].features.map((f, i) => (
+                    {t.map.zones[selected].features.map((f, i) => (
                       <span key={i} className="px-3 py-1 bg-gray-100 rounded-full text-[10px] font-bold uppercase tracking-widest">{f}</span>
                     ))}
                   </div>
 
-                  {/* Buton vizibil pentru camp OR pentru facilitățile cu ID-uri specifice */}
-                  {(zones[selected].type === "camp" || ["baie_nuc", "bucatarie_2", "bucatarie_1", "baie_centrala"].includes(selected)) && (
-                   <button 
-  onClick={() => {
-    // Debug: să vedem ce ID încercăm să accesăm
-    console.log("Se încearcă scroll la ID:", selected);
-    
-    const element = document.getElementById(selected);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      alert(`Elementul cu id="${selected}" nu a fost găsit în pagină!`);
-    }
-  }}
-  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--accent)] hover:text-emerald-900 transition-all border-b-2 border-[var(--accent)]"
->
-  Citește mai mult ↗
-</button>
-                  )}
+                  <button 
+                    onClick={() => document.getElementById(selected)?.scrollIntoView({ behavior: "smooth" })}
+                    className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--accent)] hover:text-emerald-900 transition-all border-b-2 border-[var(--accent)]"
+                  >
+                    {t.map.more}
+                  </button>
                 </motion.div>
               )}
             </AnimatePresence>
